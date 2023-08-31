@@ -1,3 +1,7 @@
+![infiniteScroll](https://github.com/s-norolahi/InfinitScrollBar/assets/11534765/9d2741dc-f59d-47e7-a54a-35096710403e)
+
+
+
 # InfiniteScroll
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.4.
