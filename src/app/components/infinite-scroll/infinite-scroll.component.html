@@ -1,0 +1,16 @@
+<div class="center">
+    <p>infinite loading posts</p>
+</div>
+<div class="infiniteDiv" [style.height]="deviceHeight+'px'" (scroll)="onDivScroll($event)">
+
+    <div *ngFor="let post of postList" class="postDiv" [style.minHeight]="postMinHeight+'px'">
+        <b>
+            <span>{{ post.title }}</span>
+        </b>
+        <br />
+        <div>
+            <span>{{ post.body }}</span>
+        </div>
+    </div>
+</div>
+<div *ngIf="showLoading" class="loading"><img src="../assets/images/loading.gif" /></div>

@@ -1,0 +1,26 @@
+.infiniteDiv {
+    overflow-y: auto;
+    padding: 0px 50px;
+
+}
+
+.loading {
+    position: absolute;
+    left: 49%;
+    color: #fff;
+}
+
+.postDiv {
+    /* min-height: 150px; */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 2%;
+    margin-top: 2px;
+    color: #fff;
+    background-color: #000C66;
+}
+
+.center {
+    text-align: center;
+    color: #fff;
+}
