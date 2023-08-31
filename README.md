@@ -1,31 +1,45 @@
 ![infiniteScroll](https://github.com/s-norolahi/InfinitScrollBar/assets/11534765/9d2741dc-f59d-47e7-a54a-35096710403e)
 
 
+Fetch Data From WebApi With Scrolling🥇
+========================================
 
-# InfiniteScroll
+This project is an example of lightweight and extensible .
+in this project  i use below url for fetch sample data form api
+https://jsonplaceholder.typicode.com/posts
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.4.
 
-## Development server
+Testing it out📢
+=========================================
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+1.Clone or download this repository
 
-## Code scaffolding
+2.npm i
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+3.ng serve
 
-## Build
+4.Browse to this url https://localhost:4200
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+Techniques and Features🧵
+========================================
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+. Fetching data with paging according to the height  of the device
 
-## Running end-to-end tests
+. Ability to set the minimum height for each post
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+. use subject for keep all data and fetch them with every scroll
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+Please give me a star⭐
+==========================================
+
+If you like this project,Thanks ❤  
+
+
+Communication with the developer📭
+===========================================
+
+Any suggestions, criticisms, comments and questions you can contact Samad Nourollahi sa.noourollahi@gmail.com
