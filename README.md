@@ -6,6 +6,7 @@ Fetch Data From WebApi With Scrolling🥇
 
 This project is an example of lightweight and extensible .
 in this project  i use below url for fetch sample data form api
+
 https://jsonplaceholder.typicode.com/posts
 
 
@@ -23,6 +24,8 @@ Testing it out📢
 
 Techniques and Features🧵
 ========================================
+
+. using angular 11,html 5,css 3
 
 . Fetching data with paging according to the height  of the device
 
