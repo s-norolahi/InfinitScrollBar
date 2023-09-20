@@ -1,16 +1,23 @@
 <div class="center">
-    <p>infinite loading posts</p>
+    <span>dimentions:{{innerWidth}}*{{innerHeight}}</span>_____<span>deviceType:{{deviceType}}</span>
 </div>
-<div class="infiniteDiv" [style.height]="deviceHeight+'px'" (scroll)="onDivScroll($event)">
+<div class="infiniteDiv" [style.height]="deviceHeight+'px'" (scroll)="onDivScroll($event)" #infinitDiv>
 
     <div *ngFor="let post of postList" class="postDiv" [style.minHeight]="postMinHeight+'px'">
         <b>
-            <span>{{ post.title }}</span>
+
+            <span class="postTitle">{{ post.title }}</span>
         </b>
         <br />
         <div>
-            <span>{{ post.body }}</span>
+            {{ post.body | slice: 0 : (post.showMoreClicked)?99999:threshold }}<span
+                *ngIf="(post.body.length >=threshold && !post.showMoreClicked)">...</span>
+            <br />
+            <a class="showMore" *ngIf="post.body.length >=threshold" (click)="showDetail($event,post.id)">show more
+                ...</a>
         </div>
+
+
     </div>
 </div>
 <div *ngIf="showLoading" class="loading"><img src="../assets/images/loading.gif" /></div>

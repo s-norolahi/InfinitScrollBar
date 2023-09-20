@@ -24,3 +24,25 @@
     text-align: center;
     color: #fff;
 }
+
+.elips span {
+    white-space: nowrap
+}
+
+.elips {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.showMore {
+    font-size: 10;
+    color: #59f1b7;
+    cursor: pointer;
+    position: relative;
+    bottom: -30px;
+}
+
+.postTitle {
+    color: #59f1b7;
+    font-weight: bold;
+}

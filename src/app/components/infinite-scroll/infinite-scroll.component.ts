@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit, ViewChild, ViewChildren } from '@angular/core';
 import { PostService } from 'src/app/services/post.service';
 import { Post } from 'src/app/models/Post';
 
@@ -9,12 +9,18 @@ import { Post } from 'src/app/models/Post';
 })
 export class InfiniteScrollComponent implements OnInit
 {
+
   showLoading: boolean = false;
-  offset: number = 100;// for free space at bottom of screen
+  offset: number = 80;// for free space at bottom of screen
   postMinHeight = 100; // minimom height of post
   pageNumber: number = -1;
-  pageSize: number = Math.round(window.innerHeight / this.postMinHeight); // limitation for retrive from api related on device 
+  innerHeight: number = window.innerHeight;
+  innerWidth: number = window.innerWidth;
   postList: Post[] | any[] = [];
+  pageSize: number = Math.round(window.innerHeight / this.postMinHeight); // limitation for retrive from api related on device 
+
+
+  @ViewChild("infinitDiv") infinitDiv: ElementRef;
   constructor(public postService: PostService) { }
 
   ngOnInit(): void
@@ -33,17 +39,66 @@ export class InfiniteScrollComponent implements OnInit
   //#region  calculated methods
   get deviceHeight()
   {
-    return window.innerHeight - this.offset;
+    return innerHeight - this.offset;
   }
+  get threshold(): number
+  {
+    return innerWidth / 10
+  }
+  get deviceType()
+  {
+    let deviceType: string = 'desktop';
+    if (this.innerWidth >= 560 && innerWidth < 760) deviceType = 'tablet';
+    if (innerWidth < 560) deviceType = 'mobile';
+    return deviceType;
+  }
+
   //#endregion
   //#region  private methods
+  // for monitoring viewport
+  @HostListener('window:resize', ['$event'])
+  onResize()
+  {
+    this.innerHeight = window.innerHeight;
+    this.innerWidth = window.innerWidth;
+  }
   private retriveData()
   {
     this.showLoading = true;
     this.pageNumber++;
     this.postService
       .getPosts(this.pageNumber, this.pageSize)
-      .subscribe(result => { this.postList.push(...result); this.showLoading = false });
+      .subscribe(result =>
+      {
+        this.postList.push(...result);
+        this.showLoading = false;
+        // let nativeDiv = this.infinitDiv.nativeElement;
+        // setTimeout(() => { nativeDiv.scrollTo(null, nativeDiv.scrollTop + (this.pageNumber > 0 ? 50 : 0)); }, 0);
+        this.goNextPageAuto();
+      });
+  }
+
+  showDetail(event: any, postId: number)
+  {
+    event.target.remove();
+    this.postList.find(x => x.id == postId).showMoreClicked = true;
+    console.log(this.postList, 'post list');
+    //
+  }
+  private goNextPageAuto()
+  {
+    // retrive new data after 8 second if doesnt scroll
+    let nativeDiv = this.infinitDiv.nativeElement;
+    console.log(nativeDiv, 'native div');
+    let scrollOldPosition: number = nativeDiv.scrollTop;
+    setTimeout(() =>
+    {
+      if (scrollOldPosition == nativeDiv.scrollTop)
+      {
+        this.postList = [];
+        this.retriveData();
+      }
+    }, 8000);
   }
   //#endregion
 }
