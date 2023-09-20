@@ -26,11 +26,12 @@ Techniques and Features🧵
 ========================================
 
 . using angular 11,html 5,css 3
-
+. Define the threshold to display the beginning of the post and display the button to display the entire post
+. use fetch new data aftre specific second  if dont scroll
 . Fetching data with paging according to the height  of the device
-
+. monitoring viewport
 . Ability to set the minimum height for each post
-
+. classify screensize to desktop,tablet,mobile
 . use subject for keep all data and fetch them with every scroll
 
 
