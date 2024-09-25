@@ -1,0 +1,24 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+tr td:last-child {
+    cursor: move;
+    /* Change cursor to indicate draggable */
+}
+
+cdkDropList {
+    border: 1px solid #ccc;
+    min-height: 50px;
+    /* Minimum height for the drop area */
+}
+
+cdkDrag {
+    padding: 8px;
+    border: 1px solid #ccc;
+    margin-bottom: 4px;
+    /* Add space between rows */
+    background-color: white;
+    /* Background color for rows */
+}

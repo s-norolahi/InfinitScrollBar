@@ -14,6 +14,11 @@
     "downlevelIteration": true,
     "experimentalDecorators": true,
     "moduleResolution": "node",
+    "suppressImplicitAnyIndexErrors": true,
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "types": [],
     "importHelpers": true,
     "target": "es2017",
     "module": "es2020",

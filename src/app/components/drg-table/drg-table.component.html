@@ -1,0 +1,9 @@
+<p>drg-table works!</p>
+<div cdkDropList (cdkDropListDropped)="drop($event)">
+    <table>
+        <tr *ngFor="let item of items">
+            <td>{{ item.name }}</td>
+            <td cdkDrag>{{ item.value }}</td>
+        </tr>
+    </table>
+</div>
