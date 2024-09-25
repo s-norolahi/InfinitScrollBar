@@ -9,6 +9,9 @@ import { SelectCellComponent } from './components/editable-grid/relatedComponent
 import { FormsModule } from '@angular/forms';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { DrgTableComponent } from './components/drg-table/drg-table.component';
+import { NewGridComponent } from './components/new-grid/new-grid.component';
+import { MultiDrgTableComponent } from './components/multi-drg-table/multi-drg-table.component';
+import { RightClickMenuRowComponent } from './components/right-click-menu-row/right-click-menu-row.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +20,10 @@ import { DrgTableComponent } from './components/drg-table/drg-table.component';
     EditableGridComponent,
     InputCellComponent,
     SelectCellComponent,
-    DrgTableComponent
+    DrgTableComponent,
+    NewGridComponent,
+    MultiDrgTableComponent,
+    RightClickMenuRowComponent
   ],
   imports: [
     BrowserModule,

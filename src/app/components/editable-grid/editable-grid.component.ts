@@ -1,3 +1,4 @@
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { AfterViewInit, Component, ComponentFactoryResolver, OnInit, QueryList, ViewChild, ViewChildren, ViewContainerRef } from '@angular/core';
 import { InputCellComponent } from './relatedComponents/input-cell/input-cell.component';
 import { SelectCellComponent } from './relatedComponents/select-cell/select-cell.component';
@@ -95,6 +96,10 @@ export class EditableGridComponent implements AfterViewInit
       });
       id++;
     });
+  }
+  drop(event: CdkDragDrop<any[]>)
+  {
+    moveItemInArray(this.newData, event.previousIndex, event.currentIndex);
   }
 }
 

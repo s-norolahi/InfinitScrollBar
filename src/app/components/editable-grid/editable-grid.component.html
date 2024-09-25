@@ -10,22 +10,25 @@
         <br />
     </ng-container>
 </div>
-<table>
-    <thead>
-        <tr>
-            <td *ngFor="let col of columns" class="withBorder">{{col.title}}</td>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let item of newData">
-            <td *ngFor="let col of columns">
-                <ng-container #dynamicContainerNew></ng-container>
-            </td>
-            <td>
-                <input type="button" value="remove" (click)="removeRow(item)" />
-            </td>
-        </tr>
-    </tbody>
-</table>
+<div cdkDropList (cdkDropListDropped)="drop($event)">
+    <table>
+        <thead>
+            <tr>
+                <td *ngFor="let col of columns" class="withBorder">{{col.title}}</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of newData" cdkDrag>
+                <td *ngFor="let col of columns">
+                    <ng-container #dynamicContainerNew></ng-container>
+                </td>
+                <td>
+                    <input type="button" value="remove" (click)="removeRow(item)" />
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
 <input type="button" (click)="submitData()" value="test" />
 <input type="button" (click)="addRow()" value="add" />
