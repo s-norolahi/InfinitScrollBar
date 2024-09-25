@@ -1,4 +1,4 @@
-![infiniteScroll](https://github.com/s-norolahi/InfinitScrollBar/assets/11534765/9d2741dc-f59d-47e7-a54a-35096710403e)
+![infiniteScroll](https://github.com/s-norolahi/InfinitScrollBar/assets/11534765/c98fdde6-d5e4-4c97-bf01-2e36bcc1ea3f)
 
 
 Fetch Data From WebApi With Scrolling🥇
@@ -26,10 +26,18 @@ Techniques and Features🧵
 ========================================
 
 . using angular 11,html 5,css 3
+<ذق
+. Define the threshold to display the beginning of the post and display the button to display the entire post
+
+. use fetch new data aftre specific second  if dont scroll
 
 . Fetching data with paging according to the height  of the device
 
+. monitoring viewport
+
 . Ability to set the minimum height for each post
+
+. classify screensize to desktop,tablet,mobile
 
 . use subject for keep all data and fetch them with every scroll
 
